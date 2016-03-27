@@ -44,7 +44,7 @@ def makeProductPath(env, pathFormat):
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-## @brief Set a version ID from env, or a version control ID string ($name$ or $HeadURL$)
+# @brief Set a version ID from env, or a version control ID string ($name$ or $HeadURL$)
 def determineVersion(env, versionString):
     version = "unknown"
     if 'version' in env:
@@ -72,7 +72,7 @@ def determineVersion(env, versionString):
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-## @brief Return a unique fingerprint for a version (e.g. an SHA1); return None if unavailable
+# @brief Return a unique fingerprint for a version (e.g. an SHA1); return None if unavailable
 def getFingerprint(versionString):
     if versionString.lower() in ("hg", "mercurial"):
         fingerprint, modified = hg.guessFingerprint()
@@ -87,7 +87,7 @@ def getFingerprint(versionString):
     return fingerprint
 
 
-## @brief Set a prefix based on the EUPS_PATH, the product name, and a versionString from cvs or svn.
+# @brief Set a prefix based on the EUPS_PATH, the product name, and a versionString from cvs or svn.
 def setPrefix(env, versionString, eupsProductPath=None):
     try:
         env['version'] = determineVersion(env, versionString)
@@ -375,7 +375,7 @@ def InstallEups(env, dest, files=[], presetup=""):
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-## @brief Install directories in the usual LSST way, handling "ups" specially.
+# @brief Install directories in the usual LSST way, handling "ups" specially.
 @memberOf(SConsEnvironment)
 def InstallLSST(self, prefix, dirs, ignoreRegex=None):
     results = []

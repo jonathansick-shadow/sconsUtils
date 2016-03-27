@@ -120,7 +120,7 @@ class Control(object):
         if test in self._info and self._info[test][0] == self._EXPECT_FAILURE:
             msg = self._info[test][1]
             return "false", "Passed, but should have failed: %s" % msg, \
-                   "true",  "Failed as expected: %s" % msg
+                   "true", "Failed as expected: %s" % msg
         else:
             return "true",  "passed", \
                    "false", "failed"

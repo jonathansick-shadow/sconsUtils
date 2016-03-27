@@ -32,6 +32,7 @@ if not haveEups():
         return None, None, None, None, flavor()
 
     class _Eups(object):
+
         def __call__(self):
             return self
     Eups = _Eups()

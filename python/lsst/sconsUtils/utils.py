@@ -83,6 +83,8 @@ def needShebangRewrite():
 #  @brief Returns library loader path environment string to be prepended to external commands
 #         Will be "" if nothing is required.
 ##
+
+
 def libraryLoaderEnvironment():
     libpathstr = ""
     # If we have an OS X with System Integrity Protection enabled or similar we need
@@ -100,6 +102,8 @@ def libraryLoaderEnvironment():
 #
 #  Note that the entire program output is returned, not just a single line.
 ##
+
+
 def runExternal(cmd, fatal=False, msg=None):
     if msg is None:
         try:

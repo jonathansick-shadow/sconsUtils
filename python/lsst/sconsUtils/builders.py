@@ -18,7 +18,7 @@ from .installation import determineVersion, getFingerprint
 from . import state
 
 
-## @brief Like SharedLibrary, but don't insist that all symbols are resolved
+# @brief Like SharedLibrary, but don't insist that all symbols are resolved
 @memberOf(SConsEnvironment)
 def SharedLibraryIncomplete(self, target, source, **keywords):
     myenv = self.Clone()
@@ -27,8 +27,8 @@ def SharedLibraryIncomplete(self, target, source, **keywords):
     return myenv.SharedLibrary(target, source, **keywords)
 
 
-##  @brief Like LoadableModule, but don't insist that all symbols are resolved, and set
-##         some SWIG-specific flags.
+# @brief Like LoadableModule, but don't insist that all symbols are resolved, and set
+# some SWIG-specific flags.
 @memberOf(SConsEnvironment)
 def SwigLoadableModule(self, target, source, **keywords):
     myenv = self.Clone()
@@ -220,7 +220,7 @@ def CleanTree(self, files, dir=".", recurse=True, verbose=False):
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 
-## @brief Return a product's PRODUCT_DIR, or None
+# @brief Return a product's PRODUCT_DIR, or None
 @memberOf(SConsEnvironment)
 def ProductDir(env, product):
     from . import eupsForScons
@@ -466,7 +466,7 @@ def Doxygen(self, config, **kw):
         "projectName": None,
         "projectNumber": None,
         "excludeSwig": True
-        }
+    }
     for k in defaults:
         if kw.get(k) is None:
             kw[k] = defaults[k]

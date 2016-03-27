@@ -336,7 +336,7 @@ class BasicSConscript(object):
             useTags=state.env.doxygen["tags"],
             makeTag=(state.env["packageName"] + ".tag"),
             **kw
-            )
+        )
         state.targets["doc"].extend(result)
         return result
 
@@ -456,10 +456,10 @@ class BasicSConscript(object):
         for name, src in swigSrc.items():
             results.extend(
                 state.env.SwigLoadableModule("_" + name, src, LIBS=state.env.getLibs("main python"))
-                )
+            )
         for result in results:
             state.env.Depends(result, state.targets["lib"])
         state.targets["examples"].extend(results)
         return results
 
-## @}
+# @}
